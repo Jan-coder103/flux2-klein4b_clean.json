@@ -1,6 +1,12 @@
 # clean base image containing only comfyui, comfy-cli and comfyui-manager
 FROM runpod/worker-comfyui:5.5.1-base
 
+# 1. Update ComfyUI Core to the latest version
+# We also update the requirements to prevent "ModuleNotFoundError"
+RUN cd /comfyui && \
+    git pull && \
+    pip install --upgrade --no-cache-dir -r requirements.txt
+
 # Install GGUF support (crucial for specific models)
 # Using --mode remote to ensure we get the latest registry info
 RUN comfy-node-install ComfyUI-GGUF --mode remote
