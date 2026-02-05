@@ -26,6 +26,6 @@ RUN comfy model download --url https://huggingface.co/unsloth/Qwen3-4B-GGUF/reso
 RUN comfy model download --url https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors --relative-path models/vae --filename flux2-vae.safetensors
 
 # LoRA: The nipple-diffusion LoRA seen in your Klein workflow
-RUN comfy model download --url https://huggingface.co/UnifiedHorusRA/TheFourHorsemen/resolve/main/NippleDiffusion_-_Flux2_Klein/Flux_2_Klein_4B/nipplediffusion-f2-klein-4b.safetensors --relative-path models/loras --filename nipplediffusion-f2-klein-4b.safetensors
+RUN comfy model download --url https://huggingface.co/Snowy4901/Kibeko/resolve/main/nipdiff-f2-klein-4b.safetensors --relative-path models/loras --filename nipdiff-f2-klein-4b.safetensors
 
 # No COPY workflow_api.json needed here since you send it via API request!
